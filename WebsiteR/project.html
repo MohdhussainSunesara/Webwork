@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="bg-white">
+        <header class="absolute inset-x-0 top-0 z-50">
+            <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+                <div class="flex lg:flex-1">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Your Company</span>
+                        <img class="h-10 w-auto" src="./assests/mainlogo.svg"
+                            alt="Logo" title="Logo">
+                    </a>
+                </div>
+                <div class="flex lg:hidden">
+                    <button id="toggle" type="button"
+                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                        onclick="openMenu()">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden lg:flex lg:gap-x-12">
+                    <a href="./home.html"
+                        class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+                        title="Home">Home</a>
+                    <a href="#aboutUs"
+                        class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+                        title="About Us">About Us</a>
+                    <a href="./project.html"
+                        class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+                        title="Projects">Projects</a>
+                    <a href="#"
+                        class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+                        title="Partner with Us">Partner with Us</a>
+                    <a href="#gall"
+                        class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+                        title="Gallery">Gallery</a>
+                    <a href="#"
+                        class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+                        title="Careers">Careers</a>
+                    <a href="#"
+                        class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+                        title="Knowledge Hub">Knowledge Hub</a>
+                    <a href="#footer"
+                        class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+                        title="Contact">Contact</a>
+                </div>
+                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                    <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span
+                    aria-hidden="true">&rarr;</span></a> -->
+                </div>
+            </nav>
+            <!-- Mobile menu, show/hide based on menu open state. -->
+            <div class="lg:hidden" role="dialog" aria-modal="true">
+                <!-- Background backdrop, show/hide based on slide-over state. -->
+                <div class="fixed inset-0 z-50"></div>
+                <div id="shut"
+                    class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="-m-1.5 p-1.5">
+                            <span class="sr-only">Your Company</span>
+                            <img class="h-8 w-auto"
+                                src="./assests/mainlogo.svg" alt="logo">
+                        </a>
+                        <button type="button" id="btn" class="-m-2.5 rounded-md p-2.5 text-gray-700"
+                            onclick="closeMenu()">
+                            <span class="sr-only">Close menu</span>
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mt-6 flow-root">
+                        <div class="-my-6 divide-y divide-gray-500/10">
+                            <div class="space-y-2 py-6">
+                                <a href="./home.html"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
+                                <a href="#aboutUs"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About
+                                    Us</a>
+                                <a href="./project.html"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Projects</a>
+                                <a href="#"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Partner
+                                    with Us</a>
+                                <a href="#gall"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Gallery</a>
+                                <a href="#"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Careers</a>
+                                <a href="#footer"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
+                            </div>
+                            <div class="py-6">
+                                <a href="#"
+                                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log
+                                    in</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="relative isolate px-6 pt-14 lg:px-8">
+            <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+                aria-hidden="true">
+                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                </div>
+            </div>
+            <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-20">
+                <!-- <div class="hidden sm:mb-8 sm:flex sm:justify-center" style="display: none;">
+                    <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                      Announcing our next round of funding. <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                  </div> -->
+                <div class="text-center">
+                    <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">THE PRIMELAND MARK
+                    </h1>
+                    <h5 class="text-1xl font-bold text-gray-900" style="font-size: 18px; margin-top: 10px;">We work with
+                        a purpose
+                        and the purpose is to create value for everyone</h5>
+                    <p class="mt-6 text-lg leading-8 text-gray-600">At Primeland, we focus on developing positive,
+                        smarter and
+                        sustainable communities to elevate the lifestyles for everyone. We believe that every customer
+                        would like to
+                        be surrounded by the finer things in life, every property we develop has been prudently
+                        considered,
+                        thoughtfully planned, methodically designed and robustly built with a seasoned buyer in mind.
+                        Our commitment to our customers has been at the core of what we do and have always placed a
+                        premium on a
+                        collaborative and a “win-win” relationship’s.
+                    </p>
+                    <div class="mt-10 flex items-center justify-center gap-x-6">
+                        <a href="#" class="text-sm font-semibold leading-6 text-gray-900 hover:text-indigo-600">Know
+                            Us<span aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+                aria-hidden="true">
+                <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white mb-0">
+        <h1 class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">Welcome to Pedda Amberpet
+        </h1>
+        <div
+            class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+            <div>
+                <h2 id="gall" class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Gallery</h2>
+                <p class="mt-4 text-gray-500">If the apartment life is more of your style, then we’ve got you covered.
+                    Live in your dream home at an excellent premium, 2 & 3 BHK apartments with exclusive amenities that
+                    let you experience luxury and comfort unlike anything else.</p>
+
+                <dl class="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+                    <div class="border-t border-gray-200 pt-4">
+                        <dt class="font-medium text-gray-900">Gym</dt>
+                        <dd class="mt-2 text-sm text-gray-500">Designed by Good Goods, Inc.</dd>
+                    </div>
+                    <div class="border-t border-gray-200 pt-4">
+                        <dt class="font-medium text-gray-900">Cycling Track</dt>
+                        <dd class="mt-2 text-sm text-gray-500">Solid walnut base with rare earth magnets and powder
+                            coated steel card cover</dd>
+                    </div>
+                    <div class="border-t border-gray-200 pt-4">
+                        <dt class="font-medium text-gray-900">Kids Play Zone</dt>
+                        <dd class="mt-2 text-sm text-gray-500">6.25&quot; x 3.55&quot; x 1.15&quot;</dd>
+                    </div>
+                    <div class="border-t border-gray-200 pt-4">
+                        <dt class="font-medium text-gray-900">Lobby</dt>
+                        <dd class="mt-2 text-sm text-gray-500">Hand sanded and finished with natural oil</dd>
+                    </div>
+                    <div class="border-t border-gray-200 pt-4">
+                        <dt class="font-medium text-gray-900">Great View</dt>
+                        <dd class="mt-2 text-sm text-gray-500">Wood card tray and 3 refill packs</dd>
+                    </div>
+                    <div class="border-t border-gray-200 pt-4">
+                        <dt class="font-medium text-gray-900">Volley Ball Court</dt>
+                        <dd class="mt-2 text-sm text-gray-500">Made from natural materials. Grain and color vary with
+                            each item.</dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
+                <img style="aspect-ratio: auto; height: 300px; width: auto; object-fit: cover;" src="./assests/gym.jpg"
+                    alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
+                    class="rounded-lg bg-gray-100">
+                <img style="aspect-ratio: auto; height: 300px; width: auto; object-fit: cover;" src="./assests/view.jpg"
+                    alt="Top down view of walnut card tray with embedded magnets and card groove."
+                    class="rounded-lg bg-gray-100">
+                <img style="aspect-ratio: auto; height: 300px; width: auto; object-fit: cover;"
+                    src="./assests/playzone.jpg" alt="Side of walnut card tray with card groove and recessed card area."
+                    class="rounded-lg bg-gray-100">
+                <img style="aspect-ratio: auto; height: 300px; width: auto; object-fit: cover;"
+                    src="./assests/lobby.jpg"
+                    alt="Walnut card tray filled with cards and card angled in dedicated groove."
+                    class="rounded-lg bg-gray-100">
+            </div>
+        </div>
+        <div class="bg-white" style="margin-top: 5px;">
+            <h1 class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">Project Features
+            </h1>
+            <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+                <h2 class="sr-only">Products</h2>
+
+                <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+                    <a href="#" class="group">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                            <img style="aspect-ratio: auto; height: 300px; width: auto; object-fit: cover;"
+                                src="./assests/sea.jpg"
+                                alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
+                                class="h-full w-full object-cover object-center group-hover:opacity-75">
+                        </div>
+                        <h3 class="mt-4 text-lg font-medium  text-gray-900">Scenic View</h3>
+                        <p class="mt-1 text-lg font-medium text-gray-900" style="display: none;">$48</p>
+                    </a>
+                    <a href="#" class="group">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                            <img style="aspect-ratio: auto; height: 300px; width: auto; object-fit: cover;"
+                                src="./assests/location.jpg"
+                                alt="Olive drab green insulated bottle with flared screw lid and flat top."
+                                class="h-full w-full object-cover object-center group-hover:opacity-75">
+                        </div>
+                        <h3 class="mt-4 text-lg font-medium  text-gray-900">Best Location</h3>
+                        <!-- <p class="mt-1 text-lg font-medium text-gray-900">$35</p> -->
+                    </a>
+                    <a href="#" class="group">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                            <img style="aspect-ratio: auto; height: 300px; width: auto; object-fit: cover;"
+                                src="./assests/oc.jpg"
+                                alt="Person using a pen to cross a task off a productivity paper card."
+                                class="h-full w-full object-cover object-center group-hover:opacity-75">
+                        </div>
+                        <h3 class="mt-4 text-lg font-medium  text-gray-900">OC Granted</h3>
+                        <!-- <p class="mt-1 text-lg font-medium text-gray-900">$89</p> -->
+                    </a>
+                    <a href="#" class="group">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                            <img style="aspect-ratio: auto; height: 300px; width: auto; object-fit: cover;"
+                                src="./assests/people.jpg"
+                                alt="Hand holding black machined steel mechanical pencil with brass tip and top."
+                                class="h-full w-full object-cover object-center group-hover:opacity-75">
+                        </div>
+                        <h3 class="mt-4 text-lg font-medium  text-gray-900">Friendly People</h3>
+                        <!-- <p class="mt-1 text-lg font-medium text-gray-900">$35</p> -->
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <footer id="footer">
+        <div class="bg-gray-800 py-4 text-gray-400">
+            <div class="container px-4 mx-auto">
+                <div class="-mx-4 flex flex-wrap justify-between">
+                    <div class="px-4 my-4 w-full xl:w-1/5">
+                        <a href="/" class="block w-56 mb-10">
+                            <svg version="1.1" viewBox="0 0 3368 512" xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none" fill-rule="evenodd">
+                                    <g transform="translate(0 -75)">
+                                        <g transform="translate(0 75)">
+                                            <rect width="512" height="512" rx="128" fill="#3D5AFE"></rect>
+                                            <rect x="149" y="176" width="220" height="220" fill="#fff"></rect>
+                                            <circle cx="259" cy="156" r="40" fill="#fff"></circle>
+                                            <circle cx="369" cy="286" r="40" fill="#2962FF"></circle>
+                                        </g>
+                                        <text fill="white" font-family="Nunito-Bold, Nunito" font-size="512"
+                                            font-weight="bold">
+                                            <tspan x="654" y="518">Primeland</tspan>
+                                        </text>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                        <p class="text-justify">
+                            CORPORATE OFFICE:
+                            My Home Hub, 7th Floor, Block 2, Madhapur, Hitechcity Hyderabad, Telangana 500033.
+                            <br></br>
+                            BANGALORE OFFICE:
+                            40/1A, 1st floor, Basappa Complex, Lavelle Road, behind Rotary Club, Bengaluru,
+                            Karnataka 560001
+
+                        </p>
+                    </div>
+                    <div class="px-4 my-4 w-full sm:w-auto">
+                        <div>
+                            <h2 class="inline-block text-2xl pb-4 mb-4 border-b-4 border-indigo-600">Projects</h2>
+                        </div>
+                        <ul class="leading-8">
+                            <li><a href="#" class="hover:text-blue-400">Pedda Amberpet</a></li>
+                            <li><a href="#" class="hover:text-blue-400">Reserve</a></li>
+                            <li><a href="#" class="hover:text-blue-400">Iconia</a></li>
+                            <li><a href="#" class="hover:text-blue-400">The One</a></li>
+                            <li><a href="#" class="hover:text-blue-400">Greenfield at Kommireddypally</a></li>
+                            <li><a href="#" class="hover:text-blue-400">Greenfield Nandipet</a></li>
+                            <li><a href="#" class="hover:text-blue-400">Greenfield Forever</a></li>
+                            <li><a href="#" class="hover:text-blue-400">Video Intro</a></li>
+                        </ul>
+                    </div>
+                    <div class="px-4 my-4 w-full sm:w-auto">
+                        <div>
+                            <h2 class="inline-block text-2xl pb-4 mb-4 border-b-4 border-indigo-600">Email</h2>
+                        </div>
+                        <ul class="leading-8">
+                            <a href="">info@primelandindia.com</a>
+                        </ul>
+                    </div>
+                    <div class="px-4 my-4 w-full sm:w-auto xl:w-1/5">
+                        <div>
+                            <h2 class="inline-block text-2xl pb-4 mb-4 border-b-4 border-indigo-600">Connect With Us
+                            </h2>
+                        </div>
+                        <a href="#"
+                            class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
+                            <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path
+                                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
+                            <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path
+                                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
+                            <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path
+                                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full hover:text-blue-400 hover:border-blue-400">
+                            <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path
+                                    d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="bg-indigo-700 py-4 text-gray-100">
+                <div class="container mx-auto px-4">
+                  <div class="-mx-4 flex flex-wrap justify-between">
+                    <div class="px-4 w-full text-center sm:w-auto sm:text-left">
+                      Copyright © 2020
+                      <script>new Date().getFullYear() > 2020 && document.write("- " + new Date().getFullYear())</script>- 2022
+                      Tailwindow. All Rights Reserved.
+                    </div>
+                    <div class="px-4 w-full text-center sm:w-auto sm:text-left">
+                      Made with ❤️ by Tailwindow.
+                    </div>
+                  </div>
+                </div> -->
+        </div>
+    </footer>
+
+
+    <!-- <section id="project" class="bg-gray-100 py-8">
+        <h1 class="text-3xl font-bold mb-4">Welcome to Pedda Amberpet</h1>
+        <p class="mb-8">If the apartment life is more of your style, then we’ve got you covered. Live in your dream home
+            at an excellent premium, 2 & 3 BHK apartments with exclusive amenities that let you experience luxury and
+            comfort unlike anything else.</p>
+
+        <h2 class="text-2xl font-bold mb-4">Project Features</h2>
+        <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+            <li class="bg-white p-4 shadow-md rounded-md ">BASKET BALL</li>
+            <li class="bg-white p-4 shadow-md rounded-md">BOARD GAMES</li>
+            <li class="bg-white p-4 shadow-md rounded-md">CARROM</li>
+            <li class="bg-white p-4 shadow-md rounded-md">CHESS</li>
+            <li class="bg-white p-4 shadow-md rounded-md">COFFEE SHOP</li>
+            <li class="bg-white p-4 shadow-md rounded-md">CYCLING TRACK</li>
+            <li class="bg-white p-4 shadow-md rounded-md">FOOSBALL</li>
+            <li class="bg-white p-4 shadow-md rounded-md">GYM</li>
+            <li class="bg-white p-4 shadow-md rounded-md">KIDS PLAY ZONE</li>
+            <li class="bg-white p-4 shadow-md rounded-md">LOBBY</li>
+            <li class="bg-white p-4 shadow-md rounded-md">MULTIPURPOSE PARTY HALL</li>
+            <li class="bg-white p-4 shadow-md rounded-md">NET CRICKET</li>
+            <li class="bg-white p-4 shadow-md rounded-md">RESTAURANT</li>
+            <li class="bg-white p-4 shadow-md rounded-md">TABLE TENNIS</li>
+            <li class="bg-white p-4 shadow-md rounded-md">VOLLEY BALL COURT</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mb-4">Gallery</h2>
+        <div class="image-container grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+            <img src="assests/est1.jpg" alt="g1" class="rounded-md shadow-md">
+            <img src="assests/est2.jpg" alt="g2" class="rounded-md shadow-md">
+            <img src="assests/est3.jpg" alt="g3" class="rounded-md shadow-md">
+            <img src="assests/est4.jpg" alt="g4" class="rounded-md shadow-md">
+            <img src="assests/est5.jpg" alt="g5" class="rounded-md shadow-md">
+            <img src="assests/est6.jpg" alt="g6" class="rounded-md shadow-md">
+        </div>
+
+        <h2 class="text-2xl font-bold mb-4">Location Advantages</h2>
+        <ul class="mb-8">
+            <li>Very close to Ramoji Film city</li>
+            <li>10 mins from Sanghi Temple</li>
+            <li>10 mins from the proposed Railway Station at Nagole</li>
+            <li>Very next to Outer Ring Road</li>
+            <li>30 mins drive to International Airport</li>
+            <li>Close to Discoveri Oaks international School</li>
+            <li>Candor Shrine I School</li>
+            <li>Close proximity to Super Speciality Hospitals</li>
+            <li>Very close to RamaDevi Public School</li>
+            <li>Close to Valvoline Cummins Pvt</li>
+        </ul>
+    </section>
+               -->
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

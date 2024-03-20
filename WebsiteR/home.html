@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+</head>
+
+<body class="">
+  <div class="bg-white">
+    <header class="absolute inset-x-0 top-0 z-50">
+      <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img class="h-10 w-auto" src="./assests/mainlogo.svg" alt="Logo"
+              title="Logo">
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button id="toggle" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" onclick="openMenu()">
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a href="./home.html" class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+            title="Home">Home</a>
+          <a href="#aboutUs"
+            class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+            title="About Us">About Us</a>
+          <a href="./project.html"
+            class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+            title="Projects">Projects</a>
+          <a href="#" class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+            title="Partner with Us">Partner with Us</a>
+          <a href="./project.html/#gall" class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+            title="Gallery">Gallery</a>
+          <a href="#" class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+            title="Careers">Careers</a>
+          <a href="#" class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+            title="Knowledge Hub">Knowledge Hub</a>
+          <a href="#footer" class="text-sm font-semibold leading-6 text-gray-900 hover:border-b-2 hover:border-indigo-600"
+            title="Contact">Contact</a>
+        </div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span
+                aria-hidden="true">&rarr;</span></a> -->
+        </div>
+      </nav>
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div class="lg:hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-50"></div>
+        <div
+          id="shut" class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Your Company</span>
+              <img class="h-8 w-auto" src="./assests/mainlogo.svg" alt="logo">
+            </a>
+            <button type="button" id="btn" class="-m-2.5 rounded-md p-2.5 text-gray-700" onclick="closeMenu()">
+              <span class="sr-only">Close menu</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a href="./home.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
+                <a href="#aboutUs"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About
+                  Us</a>
+                <a href="./project.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Projects</a>
+                <a href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Partner
+                  with Us</a>
+                <a href="./project.html/#gall"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Gallery</a>
+                <a href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Careers</a>
+                <a href="#footer"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
+              </div>
+              <div class="py-6">
+                <a href="#"
+                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log
+                    in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="relative isolate px-6 pt-14 lg:px-8">
+      <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+        aria-hidden="true">
+        <div
+          class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+          style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+        </div>
+      </div>
+      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-20">
+        <!-- <div class="hidden sm:mb-8 sm:flex sm:justify-center" style="display: none;">
+                <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                  Announcing our next round of funding. <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+                </div>
+              </div> -->
+        <div class="text-center">
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">THE PRIMELAND MARK
+          </h1>
+          <h5 class="text-1xl font-bold text-gray-900" style="font-size: 18px; margin-top: 10px;">We work with a purpose
+            and the purpose is to create value for everyone</h5>
+          <p class="mt-6 text-lg leading-8 text-gray-600">At Primeland, we focus on developing positive, smarter and
+            sustainable communities to elevate the lifestyles for everyone. We believe that every customer would like to
+            be surrounded by the finer things in life, every property we develop has been prudently considered,
+            thoughtfully planned, methodically designed and robustly built with a seasoned buyer in mind.
+            Our commitment to our customers has been at the core of what we do and have always placed a premium on a
+            collaborative and a “win-win” relationship’s.
+          </p>
+          <div class="mt-10 flex items-center justify-center gap-x-6">
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900 hover:text-indigo-600">Know Us<span
+                aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+        aria-hidden="true">
+        <div
+          class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+          style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-white py-24 pt-0 sm:py-10">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <dl class="grid grid-cols-1 gap-x-2 gap-y-16 text-center lg:grid-cols-3">
+        <div class="mx-auto flex max-w-xs flex-col gap-y-2">
+          <dt class="text-base leading-7 text-gray-900">INDUSTRY EXPERIENCE</dt>
+          <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">25+</dd>
+        </div>
+        <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+          <dt class="text-base leading-7 text-gray-900">ACRES CRAFTED
+          </dt>
+          <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">2K+</dd>
+        </div>
+        <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+          <dt class="text-base leading-7 text-gray-900">HAPPY CUSTOMERS</dt>
+          <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">10K+</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="bg-white pt-0 mt-1 py-24 sm:py-32" id="aboutUs">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:text-center">
+        <h2 class="text-base font-semibold leading-7 text-indigo-600">About Us</h2>
+        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">WHY PEOPLE CHOOSE PRIMELAND</p>
+        <p class="mt-6 text-lg leading-8 text-gray-600">We work with a purpose and the purpose is to create value for
+          everyone.</p>
+      </div>
+      <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+        <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+          <div class="relative pl-16">
+            <dt class="text-base font-semibold leading-7 text-gray-900">
+              <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
+                </svg>
+              </div>
+              Passion
+            </dt>
+            <dd class="mt-2 text-base leading-7 text-gray-600">We are passionate about what we do and we believe that
+              Real Estate Development can change the landscape of the markets and also to the people’s lives. We’re
+              relentlessly focused on growth opportunities to create increased value for everyone.</dd>
+          </div>
+          <div class="relative pl-16">
+            <dt class="text-base font-semibold leading-7 text-gray-900">
+              <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                </svg>
+              </div>
+              Value Creation
+            </dt>
+            <dd class="mt-2 text-base leading-7 text-gray-600">We work with a purpose and the purpose is to create value
+              for every stake holder that is associated with us, whether it is a minute detail, a complex design, or a
+              business transaction. We have constantly evolved to the changing markets to promote a positive change.
+            </dd>
+          </div>
+          <div class="relative pl-16">
+            <dt class="text-base font-semibold leading-7 text-gray-900">
+              <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                </svg>
+              </div>
+              Commitment
+            </dt>
+            <dd class="mt-2 text-base leading-7 text-gray-600">We do what we say and believe in doing the right thing.
+              We are honest about what we think and commit only when we have conviction. We celebrate progress not just
+              results. We believe everything we do has to be of the highest possible standard at all times.</dd>
+          </div>
+          <div class="relative pl-16">
+            <dt class="text-base font-semibold leading-7 text-gray-900">
+              <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
+                </svg>
+              </div>
+              Sustainability
+            </dt>
+            <dd class="mt-2 text-base leading-7 text-gray-600">What some call difficult, we love doing it. We go beyond
+              property development to creating meaningful and sustainable communities that are built to last. We care
+              for nature and constantly the best practices to significantly reduce the negative impact on the
+              environment.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 pt-0 mx-auto">
+      <div class="flex flex-wrap -m-4">
+        <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
+          <div class="h-full text-center">
+            <img sty="width: 20" alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block " src="./assests/profile.jpg
+            ">
+            <p class="leading-relaxed">
+              Best real estate company for the investment purpose in approved layouts with fabulous offers from the
+              company.</p>
+            <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+            <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Anand Mishra
+            </h2>
+            <p class="text-gray-500">Kompally, Hyderabad</p>
+          </div>
+        </div>
+        <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
+          <div class="h-full text-center">
+            <img sty="width: 20" alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block " src="./assests/profile.jpg
+            ">
+            <p class="leading-relaxed">I am happy that I purchased a villa with Primeland Group because the quality of
+              materials they used are very great and long lasting.
+            </p>
+            <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+            <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Srinivas Rao</h2>
+            <p class="text-gray-500">Kondapur,Hyderabad</p>
+          </div>
+        </div>
+        <div class="lg:w-1/3 lg:mb-0 p-4">
+          <div class="h-full text-center">
+            <img sty="width: 20" alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block " src="./assests/profile.jpg
+            ">
+            <p class="leading-relaxed">Really impressed by the customer service team, they are extremely friendly and
+              always helpful for a picky buyer like me.</p>
+            <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+            <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Pradeep Kumar
+
+            </h2>
+            <p class="text-gray-500">
+              Indra Nagar,Bangalore
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!---------------------------------------------------------->
+
+
+  <footer id="footer">
+    <div class="bg-gray-800 py-4 text-gray-400">
+      <div class="container px-4 mx-auto">
+        <div class="-mx-4 flex flex-wrap justify-between">
+          <div class="px-4 my-4 w-full xl:w-1/5">
+            <a href="/" class="block w-56 mb-10">
+              <svg version="1.1" viewBox="0 0 3368 512" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <g transform="translate(0 -75)">
+                    <g transform="translate(0 75)">
+                      <rect width="512" height="512" rx="128" fill="#3D5AFE"></rect>
+                      <rect x="149" y="176" width="220" height="220" fill="#fff"></rect>
+                      <circle cx="259" cy="156" r="40" fill="#fff"></circle>
+                      <circle cx="369" cy="286" r="40" fill="#2962FF"></circle>
+                    </g>
+                    <text fill="white" font-family="Nunito-Bold, Nunito" font-size="512" font-weight="bold">
+                      <tspan x="654" y="518">Primeland</tspan>
+                    </text>
+                  </g>
+                </g>
+              </svg>
+            </a>
+            <p class="text-justify">
+              CORPORATE OFFICE:
+              My Home Hub, 7th Floor, Block 2, Madhapur, Hitechcity Hyderabad, Telangana 500033.
+              <br></br>
+              BANGALORE OFFICE:
+              40/1A, 1st floor, Basappa Complex, Lavelle Road, behind Rotary Club, Bengaluru, Karnataka 560001
+
+            </p>
+          </div>
+          <div class="px-4 my-4 w-full sm:w-auto">
+            <div>
+              <h2 class="inline-block text-2xl pb-4 mb-4 border-b-4 border-indigo-600">Projects</h2>
+            </div>
+            <ul class="leading-8">
+              <li><a href="#" class="hover:text-blue-400">Pedda Amberpet</a></li>
+              <li><a href="#" class="hover:text-blue-400">Reserve</a></li>
+              <li><a href="#" class="hover:text-blue-400">Iconia</a></li>
+              <li><a href="#" class="hover:text-blue-400">The One</a></li>
+              <li><a href="#" class="hover:text-blue-400">Greenfield at Kommireddypally</a></li>
+              <li><a href="#" class="hover:text-blue-400">Greenfield Nandipet</a></li>
+              <li><a href="#" class="hover:text-blue-400">Greenfield Forever</a></li>
+              <li><a href="#" class="hover:text-blue-400">Video Intro</a></li>
+            </ul>
+          </div>
+          <div class="px-4 my-4 w-full sm:w-auto">
+            <div>
+              <h2 class="inline-block text-2xl pb-4 mb-4 border-b-4 border-indigo-600">Email</h2>
+            </div>
+            <ul class="leading-8">
+              <a href="">info@primelandindia.com</a>
+            </ul>
+          </div>
+          <div class="px-4 my-4 w-full sm:w-auto xl:w-1/5">
+            <div>
+              <h2 class="inline-block text-2xl pb-4 mb-4 border-b-4 border-indigo-600">Connect With Us</h2>
+            </div>
+            <a href="#"
+              class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                </path>
+              </svg>
+            </a>
+            <a href="#"
+              class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                  d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                </path>
+              </svg>
+            </a>
+            <a href="#"
+              class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                </path>
+              </svg>
+            </a>
+            <a href="#"
+              class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full hover:text-blue-400 hover:border-blue-400">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <path
+                  d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="bg-indigo-700 py-4 text-gray-100">
+        <div class="container mx-auto px-4">
+          <div class="-mx-4 flex flex-wrap justify-between">
+            <div class="px-4 w-full text-center sm:w-auto sm:text-left">
+              Copyright © 2020
+              <script>new Date().getFullYear() > 2020 && document.write("- " + new Date().getFullYear())</script>- 2022
+              Tailwindow. All Rights Reserved.
+            </div>
+            <div class="px-4 w-full text-center sm:w-auto sm:text-left">
+              Made with ❤️ by Tailwindow.
+            </div>
+          </div>
+        </div> -->
+    </div>
+  </footer>
+
+  <script src="./script.js"></script> 
+</body>
+
+</html>
